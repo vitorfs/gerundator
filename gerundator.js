@@ -4,11 +4,11 @@
         if (action) {
             if (text.substr(text.length - 1) == "r")
                 text = text.substr(0, text.length - 1) + "ndo";
-            text += "...";
+            text += "…";
         }
         else {
-            if (text.substr(text.length - 3) == "...")
-                text = text.substr(0, text.length - 3);
+            if (text.substr(text.length - 1) == "…")
+                text = text.substr(0, text.length - 1);
             if (text.substr(text.length - 3) == "ndo")
                 text = text.substr(0, text.length - 3) + "r";
         }
