@@ -1,0 +1,32 @@
+@import "reset.css"
+@import "bourbon"
+@import url(http://fonts.googleapis.com/css?family=Monda:400)
+@import url(http://fonts.googleapis.com/css?family=Limelight)
+@import url(http://fonts.googleapis.com/css?family=Racing+Sans+One)
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,400italic,600italic)
+
+$blue: #89aeb7
+$red: #dd6b51
+$white: #f3f2ee
+$black: #333
+
+$logo: Racing Sans One, sans-serif
+$font: Source Sans Pro, sans-serif
+
+::selection
+  background-color: rgba($blue, .3)
+
+body
+  background-color: $white
+  box-shadow: inset 0 1em 0 $red, inset 0 2em 0 $white, inset 0 3em 0 $blue
+  color: $black
+  font: 400 20px/1.5 $font
+  padding: 5em 30%
+
+h1
+  font:
+    family: $logo
+    size: 4em
+  padding-bottom: .2em
+  text-align: center
+  text-transform: uppercase
