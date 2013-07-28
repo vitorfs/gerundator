@@ -16,39 +16,68 @@ $mono-font: Ubuntu Mono, monospace
 ::selection
   background-color: rgba($blue, .3)
 
-body
+html
   background-color: $white
   box-shadow: inset 0 1em 0 $red, inset 0 2em 0 $white, inset 0 3em 0 $blue
+
+body
   color: $black
   font: 400 20px/1.5 $body-font
-  padding: 5em 30%
+  margin: 5em auto
+  width: 30em
 
 h1
   font:
     family: $logo
     size: 4em
-  padding-bottom: .2em
+  margin-bottom: .2em
   text-align: center
   text-transform: uppercase
 
+p.slogan
+  color: $blue
+  font-size: 1.2em
+  margin: 0 2.5em 2em
+  text-align: center
+
 p,
 pre,
-ul
+ul,
+h2
   margin-bottom: 1.5em
 
+h2
+  color: $red
+  font-size: 1.3em
+
+code,
 pre
   background-color: rgba($red, .1)
+  border-radius: .3em
   font-family: $mono-font
+
+code
+  padding: .1em .3em
+
+pre
   overflow-x: auto
   padding: 1em
 
-@media screen and (max-width: 1200px)
-  body
-    padding: 5em 20%
+  code
+    background: none
+    padding: 0
 
+li
+  margin-bottom: .5em
+
+@media screen and (max-width: 1200px)
   h1
     font-size: 3em
 
+  p.slogan
+    font-size: 1em
+    margin: 0 4em 2em
+
 @media screen and (max-width: 1000px)
   body
-    padding: 5em 10%
+    width: 28em

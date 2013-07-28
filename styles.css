@@ -5,37 +5,65 @@
 ::selection {
   background-color: rgba(137, 174, 183, 0.3); }
 
-body {
+html {
   background-color: #f3f2ee;
-  box-shadow: inset 0 1em 0 #dd6b51, inset 0 2em 0 #f3f2ee, inset 0 3em 0 #89aeb7;
+  box-shadow: inset 0 1em 0 #dd6b51, inset 0 2em 0 #f3f2ee, inset 0 3em 0 #89aeb7; }
+
+body {
   color: #333333;
   font: 400 20px/1.5 Source Sans Pro, sans-serif;
-  padding: 5em 30%; }
+  margin: 5em auto;
+  width: 30em; }
 
 h1 {
   font-family: Racing Sans One, sans-serif;
   font-size: 4em;
-  padding-bottom: 0.2em;
+  margin-bottom: 0.2em;
   text-align: center;
   text-transform: uppercase; }
 
+p.slogan {
+  color: #89aeb7;
+  font-size: 1.2em;
+  margin: 0 2.5em 2em;
+  text-align: center; }
+
 p,
 pre,
-ul {
+ul,
+h2 {
   margin-bottom: 1.5em; }
 
+h2 {
+  color: #dd6b51;
+  font-size: 1.3em; }
+
+code,
 pre {
   background-color: rgba(221, 107, 81, 0.1);
-  font-family: Ubuntu Mono, monospace;
+  border-radius: 0.3em;
+  font-family: Ubuntu Mono, monospace; }
+
+code {
+  padding: 0.1em 0.3em; }
+
+pre {
   overflow-x: auto;
   padding: 1em; }
+  pre code {
+    background: none;
+    padding: 0; }
+
+li {
+  margin-bottom: 0.5em; }
 
 @media screen and (max-width: 1200px) {
-  body {
-    padding: 5em 20%; }
-
   h1 {
-    font-size: 3em; } }
+    font-size: 3em; }
+
+  p.slogan {
+    font-size: 1em;
+    margin: 0 4em 2em; } }
 @media screen and (max-width: 1000px) {
   body {
-    padding: 5em 10%; } }
+    width: 28em; } }

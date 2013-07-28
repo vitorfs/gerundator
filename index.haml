@@ -7,7 +7,19 @@
 
   %body
     %h1 Gerundator
-    %p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    %p.slogan Um pequeno plugin para adicionar status de carregamento nos botões de sua aplicação
+
+    %h2 O Problema
+    %p Em aplicações onde é necessário realizar processamentos pesados no lado do servidor, é conveniente desabilitar o botão de ação após o primeiro envio, para evitar que o usuário submeta o formulário mais vezes, gerando erros ou comportamentos inesperados.
+
+    %h2 Funções
+    %ul
+      %li
+        %code disable([true|false])
+      %li
+        %code toggleDisable()
+
+    %h2 Exemplos
     %pre
       %code
         :preserve
