@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gerundator</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="gerundator.js"></script>
+</head>
+<body>
+  <button type="button">Salvar</button>
+  <button type="button">Excluir</button>
+  <script>
+    $(function () {
+      $("button[type='button']").click(function() {
+        $(this).toggleDisable();
+      });
+    });
+  </script>
+</body>
+</html>
