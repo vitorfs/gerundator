@@ -1,8 +1,7 @@
 @import "reset.css"
 @import "bourbon"
-@import url(http://fonts.googleapis.com/css?family=Monda:400)
-@import url(http://fonts.googleapis.com/css?family=Limelight)
 @import url(http://fonts.googleapis.com/css?family=Racing+Sans+One)
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono)
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,400italic,600italic)
 
 $blue: #89aeb7
@@ -11,7 +10,8 @@ $white: #f3f2ee
 $black: #333
 
 $logo: Racing Sans One, sans-serif
-$font: Source Sans Pro, sans-serif
+$body-font: Source Sans Pro, sans-serif
+$mono-font: Ubuntu Mono, monospace
 
 ::selection
   background-color: rgba($blue, .3)
@@ -20,7 +20,7 @@ body
   background-color: $white
   box-shadow: inset 0 1em 0 $red, inset 0 2em 0 $white, inset 0 3em 0 $blue
   color: $black
-  font: 400 20px/1.5 $font
+  font: 400 20px/1.5 $body-font
   padding: 5em 30%
 
 h1
@@ -30,3 +30,25 @@ h1
   padding-bottom: .2em
   text-align: center
   text-transform: uppercase
+
+p,
+pre,
+ul
+  margin-bottom: 1.5em
+
+pre
+  background-color: rgba($red, .1)
+  font-family: $mono-font
+  overflow-x: auto
+  padding: 1em
+
+@media screen and (max-width: 1200px)
+  body
+    padding: 5em 20%
+
+  h1
+    font-size: 3em
+
+@media screen and (max-width: 1000px)
+  body
+    padding: 5em 10%
