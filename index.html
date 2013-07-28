@@ -3,29 +3,47 @@
   <head>
     <meta charset='utf-8'>
     <link href='styles.css' rel='stylesheet'>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+    <script src='gerundator.js'></script>
     <title>Gerundator</title>
   </head>
   <body>
     <h1>Gerundator</h1>
     <p class='slogan'>Um pequeno plugin para adicionar status de carregamento nos botões de sua aplicação</p>
-    <h2>O Problema</h2>
+    <h2>Sobre</h2>
     <p>Em aplicações onde é necessário realizar processamentos pesados no lado do servidor, é conveniente desabilitar o botão de ação após o primeiro envio, para evitar que o usuário submeta o formulário mais vezes, gerando erros ou comportamentos inesperados.</p>
-    <p>Usuários são seres impacientes por natureza, e o fato de sua aplicação levar alguns instantes para processar certa informação juntamente com a falta de comunicação com o usuário pode estimulá-lo a clicar mais de uma vez em um botão de ação, por achar que nada aconteceu.</p>
     <p>
-      A ideia do
+      A utilização do
       <strong>Gerundator</strong>
-      é proporcionar uma maneira simples de desativar um botão de ação enquanto a sua aplicação realiza um determinado processamento, melhorando ao mesmo tempo a comunicação com o usuário.
+      permite habilitar e desabilitar os botões de ação, colocando o verbo da ação no gerúndio durante a execução: "Enviar" para "Enviando...", "Salvar" para "Salvando...", "Atualizando" para "Atualizando...", etc.
     </p>
     <h2>Funções</h2>
     <ul>
       <li>
         <code>disable([true|false])</code>
+        <p>Habilita ou desabilita um botão, colocando o verbo no gerúndio.</p>
       </li>
       <li>
         <code>toggleDisable()</code>
+        <p>Desabilita o botão caso ele esteja habilitado e habilita o botão caso ele esteja desabilitado, colocando o verbo no gerúndio.</p>
       </li>
     </ul>
+    <h2>Utilização</h2>
+    <pre><code>$("button").toggleDisable();&#x000A;</code></pre>
+    <pre><code>&lt;button type="button" id="btn-enviar"&gt;Enviar&lt;/button&gt;&#x000A;&lt;script&gt;&#x000A;  $("#btn-enviar").click(function () {&#x000A;    $.ajax({&#x000A;      url: "processa-form.php"&#x000A;      beforeSend: function () {&#x000A;        $(this).disable(true);&#x000A;      }&#x000A;      success: function (data) {&#x000A;        // execução em caso de sucesso&#x000A;      }&#x000A;      complete: function () {&#x000A;        $(this).disable(false);&#x000A;      }&#x000A;    });&#x000A;  });&#x000A;&lt;/script&gt;&#x000A;</code></pre>
     <h2>Exemplos</h2>
-    <pre><code>herp derp&#x000A;derpty derp&#x000A;hurr durr</code></pre>
+    <button type='button'>Enviar</button>
+    <button type='button'>Salvar</button>
+    <script>
+      $(function () {
+        $("button").click(function () {
+          var btn = $(this);
+          btn.toggleDisable();
+          setTimeout(function () {
+            btn.toggleDisable();
+          }, 1500);
+        });
+      });
+    </script>
   </body>
 </html>
