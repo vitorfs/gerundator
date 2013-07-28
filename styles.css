@@ -58,7 +58,8 @@ pre {
     padding: 0; }
 
 li {
-  margin-bottom: 0.5em; }
+  margin-bottom: 0.5em;
+  list-style-type: square; }
 
 @media screen and (max-width: 1200px) {
   h1 {
