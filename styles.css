@@ -25,6 +25,7 @@ button, nav a {
   display: inline-block;
   font-size: 1.5em;
   margin: 0 0.5em 0 0;
+  outline: none;
   padding: 0.2em 1em;
   text-decoration: none;
   -webkit-appearance: none;
