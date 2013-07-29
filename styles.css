@@ -93,6 +93,12 @@ pre {
   border-radius: 0.3em;
   color: #537d87;
   font-family: Ubuntu Mono, monospace; }
+  code strong,
+  pre strong {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0.3em;
+    color: #dd6b51;
+    padding: 0.1em 0.2em; }
 
 code {
   padding: 0.1em 0.3em; }

@@ -36,7 +36,7 @@
       </ul>
       <h2>Utilização</h2>
       <pre><code>$("button").toggleDisable();&#x000A;</code></pre>
-      <pre><code>&lt;button type="button" id="btn-enviar"&gt;Enviar&lt;/button&gt;&#x000A;&lt;script&gt;&#x000A;  $("#btn-enviar").click(function () {&#x000A;    $.ajax({&#x000A;      url: "processa-form.php"&#x000A;      beforeSend: function () {&#x000A;        $(this).disable(true);&#x000A;      }&#x000A;      success: function (data) {&#x000A;        // execução em caso de sucesso&#x000A;      }&#x000A;      complete: function () {&#x000A;        $(this).disable(false);&#x000A;      }&#x000A;    });&#x000A;  });&#x000A;&lt;/script&gt;&#x000A;</code></pre>
+      <pre><code>&lt;button type="button" id="btn-enviar"&gt;Enviar&lt;/button&gt;&#x000A;&lt;script&gt;&#x000A;  $("#btn-enviar").click(function () {&#x000A;    $.ajax({&#x000A;      url: "processa-form.php"&#x000A;      beforeSend: function () {&#x000A;        <strong>$(this).disable(true);</strong>&#x000A;      }&#x000A;      success: function (data) {&#x000A;        // execução em caso de sucesso&#x000A;      }&#x000A;      complete: function () {&#x000A;        <strong>$(this).disable(false);</strong>&#x000A;      }&#x000A;    });&#x000A;  });&#x000A;&lt;/script&gt;&#x000A;</code></pre>
       <h2>Exemplos</h2>
       <button type='button'>Enviar</button>
       <button type='button'>Salvar</button>

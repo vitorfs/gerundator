@@ -46,13 +46,13 @@
                 $.ajax({
                   url: "processa-form.php"
                   beforeSend: function () {
-                    $(this).disable(true);
+                    <strong>$(this).disable(true);</strong>
                   }
                   success: function (data) {
                     // execução em caso de sucesso
                   }
                   complete: function () {
-                    $(this).disable(false);
+                    <strong>$(this).disable(false);</strong>
                   }
                 });
               });
