@@ -15,6 +15,46 @@ body {
   margin: 5em auto;
   width: 30em; }
 
+button, nav a {
+  background-color: #dd6b51;
+  border: none;
+  border-radius: 0.5em;
+  box-shadow: inset 0 -0.1em 0 #bd4125;
+  color: #f3f2ee;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.5em;
+  margin: 0 0.5em 0 0;
+  padding: 0.2em 1em;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none; }
+  button:hover, nav a:hover, button:focus, nav a:focus {
+    background-color: #e17d66;
+    box-shadow: inset 0 -0.1em 0 #d9593c;
+    text-shadow: 0 0.1em 0 #d9593c; }
+  button:active, nav a:active {
+    background-color: #d9593c;
+    box-shadow: inset 0 0.1em 0 #bd4125;
+    text-shadow: 0 -0.1em 0 #bd4125; }
+  button[disabled], nav a[disabled] {
+    background-color: #beb9a3;
+    box-shadow: none;
+    cursor: wait;
+    text-shadow: none; }
+
+nav {
+  border-bottom: 0.5em solid #89aeb7;
+  font-size: 0.8em;
+  margin-bottom: 3em;
+  padding-bottom: 3em;
+  text-align: center; }
+  nav a {
+    margin: 0 1em; }
+
 h1 {
   font-family: Racing Sans One, sans-serif;
   font-size: 4em;
@@ -41,10 +81,17 @@ h2 {
   color: #dd6b51;
   font-size: 1.3em; }
 
+h1:not(:first-child),
+h2:not(:first-child) {
+  border-top: 0.1em solid #e8e7df;
+  margin-top: 2em;
+  padding-top: 1.5em; }
+
 code,
 pre {
-  background-color: rgba(221, 107, 81, 0.1);
+  background-color: rgba(137, 174, 183, 0.15);
   border-radius: 0.3em;
+  color: #537d87;
   font-family: Ubuntu Mono, monospace; }
 
 code {
@@ -58,8 +105,25 @@ pre {
     padding: 0; }
 
 li {
+  color: #89aeb7;
   margin-bottom: 0.5em;
   list-style-type: square; }
+  li p {
+    font-size: 0.9em;
+    margin-top: 0.5em; }
+
+footer {
+  border-top: 0.5em solid #89aeb7;
+  color: #9f9776;
+  font-size: 0.8em;
+  margin-top: 5em;
+  padding-top: 3em;
+  text-align: center; }
+  footer a {
+    color: #dd6b51;
+    text-decoration: none; }
+    footer a:hover, footer a:focus {
+      text-decoration: underline; }
 
 @media screen and (max-width: 1200px) {
   h1 {

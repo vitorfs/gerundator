@@ -8,60 +8,63 @@
     %title Gerundator
 
   %body
-    %h1 Gerundator
-    %p.slogan Um pequeno plugin para adicionar status de carregamento nos botões de sua aplicação
-    %div.menu(style="text-align:center;word-spacing:0.5em;")
-      %a(href="gerundator.js") Download
-      &#149;
-      %a(href="http://github.com/vitorfs/gerundator/") Github
-      &#149;
-      %a(href="http://vitorfs.com") Autor
-    %h2 Sobre
-    %p Em aplicações onde é necessário realizar processamentos pesados no lado do servidor, é conveniente desabilitar o botão de ação após o primeiro envio, para evitar que o usuário submeta o formulário mais vezes, gerando erros ou comportamentos inesperados.
-    %p 
-      A utilização do 
-      %strong Gerundator 
-      permite habilitar e desabilitar os botões de ação, colocando o verbo da ação no gerúndio durante a execução: "Enviar" para "Enviando...", "Salvar" para "Salvando...", "Atualizando" para "Atualizando...", etc.
+    %header
+      %h1 Gerundator
+      %p.slogan Um pequeno plugin para adicionar status de carregamento nos botões de sua aplicação
+      %nav
+        %a(href="gerundator.js") Download
+        %a(href="http://github.com/vitorfs/gerundator/") GitHub
+        %a(href="http://vitorfs.com") Autor
+    %article
+      %h2 Sobre
+      %p Em aplicações onde é necessário realizar processamentos pesados no lado do servidor, é conveniente desabilitar o botão de ação após o primeiro envio, para evitar que o usuário submeta o formulário mais vezes, gerando erros ou comportamentos inesperados.
+      %p
+        :markdown
+          A utilização do **Gerundator** permite habilitar e desabilitar os botões de ação, colocando o verbo da ação no gerúndio durante a execução: “Enviar” para “Enviando…”, “Salvar” para “Salvando…”, “Atualizar” para “Atualizando…” etc.
 
-    %h2 Funções
-    %ul
-      %li
-        %code disable([true|false])
-        %p Habilita ou desabilita um botão, colocando o verbo no gerúndio.
-      %li
-        %code toggleDisable()
-        %p Desabilita o botão caso ele esteja habilitado e habilita o botão caso ele esteja desabilitado, colocando o verbo no gerúndio.
+      %h2 Funções
+      %ul
+        %li
+          %code disable([true|false])
+          %p Habilita ou desabilita um botão, colocando o verbo no gerúndio.
+        %li
+          %code toggleDisable()
+          %p Desabilita o botão caso ele esteja habilitado e habilita o botão caso ele esteja desabilitado, colocando o verbo no gerúndio.
 
-    %h2 Utilização
-    %pre
-      %code
-        :preserve
-          $("button").toggleDisable();
+      %h2 Utilização
+      %pre
+        %code
+          :preserve
+            $("button").toggleDisable();
 
-    %pre
-      %code
-        :preserve
-          &lt;button type="button" id="btn-enviar"&gt;Enviar&lt;/button&gt;
-          &lt;script&gt;
-            $("#btn-enviar").click(function () {
-              $.ajax({
-                url: "processa-form.php"
-                beforeSend: function () {
-                  $(this).disable(true);
-                }
-                success: function (data) {
-                  // execução em caso de sucesso
-                }
-                complete: function () {
-                  $(this).disable(false);
-                }
+      %pre
+        %code
+          :preserve
+            &lt;button type="button" id="btn-enviar"&gt;Enviar&lt;/button&gt;
+            &lt;script&gt;
+              $("#btn-enviar").click(function () {
+                $.ajax({
+                  url: "processa-form.php"
+                  beforeSend: function () {
+                    $(this).disable(true);
+                  }
+                  success: function (data) {
+                    // execução em caso de sucesso
+                  }
+                  complete: function () {
+                    $(this).disable(false);
+                  }
+                });
               });
-            });
-          &lt;/script&gt;
+            &lt;/script&gt;
 
-    %h2 Exemplos
-    %button(type="button") Enviar
-    %button(type="button") Salvar
+      %h2 Exemplos
+      %button(type="button") Enviar
+      %button(type="button") Salvar
+
+    %footer
+      Design, Haml e Sass por
+      %a(href="http://rafaelmasoni.com") Rafael Masoni
 
     :javascript
       $(function () {

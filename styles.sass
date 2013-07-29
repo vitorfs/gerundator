@@ -26,6 +26,48 @@ body
   margin: 5em auto
   width: 30em
 
+button
+  background-color: $red
+  border: none
+  border-radius: .5em
+  box-shadow: inset 0 -.1em 0 darken($red, 15%)
+  color: $white
+  cursor: pointer
+  display: inline-block
+  font-size: 1.5em
+  margin: 0 .5em 0 0
+  padding: .2em 1em
+  text-decoration: none
+  +appearance(none)
+
+  &:hover,
+  &:focus
+    background-color: lighten($red, 5%)
+    box-shadow: inset 0 -.1em 0 darken($red, 5%)
+    text-shadow: 0 .1em 0 darken($red, 5%)
+
+  &:active
+    background-color: darken($red, 5%)
+    box-shadow: inset 0 .1em 0 darken($red, 15%)
+    text-shadow: 0 -.1em 0 darken($red, 15%)
+
+  &[disabled]
+    background-color: darken($white, 25%)
+    box-shadow: none
+    cursor: wait
+    text-shadow: none
+
+nav
+  border-bottom: .5em solid $blue
+  font-size: .8em
+  margin-bottom: 3em
+  padding-bottom: 3em
+  text-align: center
+
+  a
+    @extend button
+    margin: 0 1em
+
 h1
   font:
     family: $logo
@@ -53,10 +95,17 @@ h2
   color: $red
   font-size: 1.3em
 
+h1:not(:first-child),
+h2:not(:first-child)
+  border-top: .1em solid darken($white, 5%)
+  margin-top: 2em
+  padding-top: 1.5em
+
 code,
 pre
-  background-color: rgba($red, .1)
+  background-color: rgba($blue, .15)
   border-radius: .3em
+  color: darken($blue, 20%)
   font-family: $mono-font
 
 code
@@ -71,8 +120,29 @@ pre
     padding: 0
 
 li
+  color: $blue
   margin-bottom: .5em
   list-style-type: square
+
+  p
+    font-size: .9em
+    margin-top: .5em
+
+footer
+  border-top: .5em solid $blue
+  color: darken($white, 40%)
+  font-size: .8em
+  margin-top: 5em
+  padding-top: 3em
+  text-align: center
+
+  a
+    color: $red
+    text-decoration: none
+
+    &:hover,
+    &:focus
+      text-decoration: underline
 
 @media screen and (max-width: 1200px)
   h1

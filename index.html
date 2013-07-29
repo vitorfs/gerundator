@@ -8,39 +8,43 @@
     <title>Gerundator</title>
   </head>
   <body>
-    <h1>Gerundator</h1>
-    <p class='slogan'>Um pequeno plugin para adicionar status de carregamento nos botões de sua aplicação</p>
-    <div class='menu' style='text-align:center;word-spacing:0.5em;'>
-      <a href='gerundator.js'>Download</a>
-      &#149;
-      <a href='http://github.com/vitorfs/gerundator/'>Github</a>
-      &#149;
-      <a href='http://vitorfs.com'>Autor</a>
-    </div>
-    <h2>Sobre</h2>
-    <p>Em aplicações onde é necessário realizar processamentos pesados no lado do servidor, é conveniente desabilitar o botão de ação após o primeiro envio, para evitar que o usuário submeta o formulário mais vezes, gerando erros ou comportamentos inesperados.</p>
-    <p>
-      A utilização do
-      <strong>Gerundator</strong>
-      permite habilitar e desabilitar os botões de ação, colocando o verbo da ação no gerúndio durante a execução: "Enviar" para "Enviando...", "Salvar" para "Salvando...", "Atualizando" para "Atualizando...", etc.
-    </p>
-    <h2>Funções</h2>
-    <ul>
-      <li>
-        <code>disable([true|false])</code>
-        <p>Habilita ou desabilita um botão, colocando o verbo no gerúndio.</p>
-      </li>
-      <li>
-        <code>toggleDisable()</code>
-        <p>Desabilita o botão caso ele esteja habilitado e habilita o botão caso ele esteja desabilitado, colocando o verbo no gerúndio.</p>
-      </li>
-    </ul>
-    <h2>Utilização</h2>
-    <pre><code>$("button").toggleDisable();&#x000A;</code></pre>
-    <pre><code>&lt;button type="button" id="btn-enviar"&gt;Enviar&lt;/button&gt;&#x000A;&lt;script&gt;&#x000A;  $("#btn-enviar").click(function () {&#x000A;    $.ajax({&#x000A;      url: "processa-form.php"&#x000A;      beforeSend: function () {&#x000A;        $(this).disable(true);&#x000A;      }&#x000A;      success: function (data) {&#x000A;        // execução em caso de sucesso&#x000A;      }&#x000A;      complete: function () {&#x000A;        $(this).disable(false);&#x000A;      }&#x000A;    });&#x000A;  });&#x000A;&lt;/script&gt;&#x000A;</code></pre>
-    <h2>Exemplos</h2>
-    <button type='button'>Enviar</button>
-    <button type='button'>Salvar</button>
+    <header>
+      <h1>Gerundator</h1>
+      <p class='slogan'>Um pequeno plugin para adicionar status de carregamento nos botões de sua aplicação</p>
+      <nav>
+        <a href='gerundator.js'>Download</a>
+        <a href='http://github.com/vitorfs/gerundator/'>GitHub</a>
+        <a href='http://vitorfs.com'>Autor</a>
+      </nav>
+    </header>
+    <article>
+      <h2>Sobre</h2>
+      <p>Em aplicações onde é necessário realizar processamentos pesados no lado do servidor, é conveniente desabilitar o botão de ação após o primeiro envio, para evitar que o usuário submeta o formulário mais vezes, gerando erros ou comportamentos inesperados.</p>
+      <p>
+        <p>A utilização do <strong>Gerundator</strong> permite habilitar e desabilitar os botões de ação, colocando o verbo da ação no gerúndio durante a execução: “Enviar” para “Enviando…”, “Salvar” para “Salvando…”, “Atualizar” para “Atualizando…” etc.</p>
+      </p>
+      <h2>Funções</h2>
+      <ul>
+        <li>
+          <code>disable([true|false])</code>
+          <p>Habilita ou desabilita um botão, colocando o verbo no gerúndio.</p>
+        </li>
+        <li>
+          <code>toggleDisable()</code>
+          <p>Desabilita o botão caso ele esteja habilitado e habilita o botão caso ele esteja desabilitado, colocando o verbo no gerúndio.</p>
+        </li>
+      </ul>
+      <h2>Utilização</h2>
+      <pre><code>$("button").toggleDisable();&#x000A;</code></pre>
+      <pre><code>&lt;button type="button" id="btn-enviar"&gt;Enviar&lt;/button&gt;&#x000A;&lt;script&gt;&#x000A;  $("#btn-enviar").click(function () {&#x000A;    $.ajax({&#x000A;      url: "processa-form.php"&#x000A;      beforeSend: function () {&#x000A;        $(this).disable(true);&#x000A;      }&#x000A;      success: function (data) {&#x000A;        // execução em caso de sucesso&#x000A;      }&#x000A;      complete: function () {&#x000A;        $(this).disable(false);&#x000A;      }&#x000A;    });&#x000A;  });&#x000A;&lt;/script&gt;&#x000A;</code></pre>
+      <h2>Exemplos</h2>
+      <button type='button'>Enviar</button>
+      <button type='button'>Salvar</button>
+    </article>
+    <footer>
+      Design, Haml e Sass por
+      <a href='http://rafaelmasoni.com'>Rafael Masoni</a>
+    </footer>
     <script>
       $(function () {
         $("button").click(function () {
