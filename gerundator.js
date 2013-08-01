@@ -1,22 +1,40 @@
 (function ($) {
-    $.fn.disable = function (action) {
-        var text = $(this).html();
-        if (action) {
-            if (text.substr(text.length - 1) == "r")
-                text = text.substr(0, text.length - 1) + "ndo";
-            text += "…";
+
+    $.fn.disable = function (disable) {
+        var buttonLabel = $(this).html();
+        var dataLoading = $(this).attr("data-loading");
+
+        if (disable == true && !$(this).is(":disabled")) {
+            if (dataLoading != null) {
+                $(this).attr("data-loading", buttonLabel);
+                buttonLabel = dataLoading;
+            } 
+            else {
+                if (buttonLabel.substr(buttonLabel.length - 1) == "r")
+                    buttonLabel = buttonLabel.substr(0, buttonLabel.length - 1) + "ndo";
+                buttonLabel += "…";
+            }
         }
-        else {
-            if (text.substr(text.length - 1) == "…")
-                text = text.substr(0, text.length - 1);
-            if (text.substr(text.length - 3) == "ndo")
-                text = text.substr(0, text.length - 3) + "r";
+
+        if (disable == false && $(this).is(":disabled")) {
+            if (dataLoading != null) {
+                $(this).attr("data-loading", buttonLabel);
+                buttonLabel = dataLoading;
+            }
+            else {
+                if (buttonLabel.substr(buttonLabel.length - 1) == "…")
+                    buttonLabel = buttonLabel.substr(0, buttonLabel.length - 1);
+                if (buttonLabel.substr(buttonLabel.length - 3) == "ndo")
+                    buttonLabel = buttonLabel.substr(0, buttonLabel.length - 3) + "r";
+            }
         }
-        $(this).html(text);
-        $(this).attr("disabled", action);
+
+        $(this).html(buttonLabel);
+        $(this).attr("disabled", disable);
     };
 
     $.fn.toggleDisable = function () {
         $(this).disable(!$(this).is(":disabled"));
     };
+
 }(jQuery));
