@@ -3,23 +3,24 @@
     $.fn.disable = function (disable) {
         var buttonLabel = $(this).html();
         var dataLoading = $(this).attr("data-loading");
+        var dataOriginal = $(this).attr("data-original");
 
         if (disable == true && !$(this).is(":disabled")) {
-            if (dataLoading != null) {
-                $(this).attr("data-loading", buttonLabel);
-                buttonLabel = dataLoading;
+            $(this).attr("data-original", buttonLabel);
+            if (dataLoading != null) { 
+                buttonLabel = dataLoading; 
             } 
             else {
-                if (buttonLabel.substr(buttonLabel.length - 1) == "r")
+                if (buttonLabel.substr(buttonLabel.length - 1) == "r") {
                     buttonLabel = buttonLabel.substr(0, buttonLabel.length - 1) + "ndo";
+                }
                 buttonLabel += "…";
             }
         }
 
         if (disable == false && $(this).is(":disabled")) {
-            if (dataLoading != null) {
-                $(this).attr("data-loading", buttonLabel);
-                buttonLabel = dataLoading;
+            if (dataOriginal != null) {
+                buttonLabel = dataOriginal;
             }
             else {
                 if (buttonLabel.substr(buttonLabel.length - 1) == "…")
