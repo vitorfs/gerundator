@@ -43,16 +43,17 @@
             &lt;button type="button" id="btn-enviar"&gt;Enviar&lt;/button&gt;
             &lt;script&gt;
               $("#btn-enviar").click(function () {
+                var btn = $(this);
                 $.ajax({
                   url: "processa-form.php"
                   beforeSend: function () {
-                    <strong>$(this).disable(true);</strong>
+                    <strong>btn.disable(true);</strong>
                   }
                   success: function (data) {
                     // execução em caso de sucesso
                   }
                   complete: function () {
-                    <strong>$(this).disable(false);</strong>
+                    <strong>btn.disable(false);</strong>
                   }
                 });
               });
