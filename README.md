@@ -23,8 +23,9 @@ Utilização
 ----------
 
     $("button").toggleDisable();
-    
-    <button type="button" id="btn-enviar">Enviar</button>
+
+    <button type="button" id="btn-enviar">Enviar</button
+
     <script>
       $("#btn-enviar").click(function () {
         var btn = $(this);
